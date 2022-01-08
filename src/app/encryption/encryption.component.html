@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="main_content">
+    <div class="info">
+
+<p>
+  Encryption:
+</p>
+<form #encForm = "ngForm">
+  Working Key:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  
+<input type="text" name="working_key" id="working_key"[(ngModel)]="workingkey" maxlength="32" required>
+<br><br>
+  Request Data:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<textarea id="reqdata" name="reqdata" rows="8" cols="50"[(ngModel)]="reqdata" required>
+  </textarea>
+<br><br>
+Encrypted Data:&nbsp;&nbsp;&nbsp;
+<textarea id="encdata" name="encdata" rows="12" cols="80" >{{encreqdata}}
+</textarea>
+<br><br>
+<button [disabled]="!encForm.form.valid" type="submit" (click)="encrypt()">Encrypt</button>
+</form>
+</div>
+</div>
+</div>

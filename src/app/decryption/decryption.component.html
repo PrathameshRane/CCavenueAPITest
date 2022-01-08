@@ -1,0 +1,24 @@
+<div class="wrapper">
+  <div class="main_content">
+    <div class="info">
+
+<p>
+  Decryption:
+</p>
+<form #decForm = "ngForm">
+  Working Key:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="text"  name="working_key" id="working_key"[(ngModel)]="workingkey" maxlength="32" required>
+<br><br>
+  Encrypted Data:&nbsp;&nbsp;&nbsp;
+  <textarea id="encdata" name="encdata" rows="8" cols="50"[(ngModel)]="encreqdata" required>
+    </textarea>
+  <br><br>
+  Decrypted Data:&nbsp;&nbsp;&nbsp;
+  <textarea id="decpdata" name="decpdata" rows="12" cols="80" maxlength="32" >{{decprespdata}}
+  </textarea>
+  <br><br>
+  <button [disabled]="!decForm.form.valid" type="submit" (click)="decrypt()">Decrypt</button>
+  </form>
+  </div>
+  </div>
+  </div>
